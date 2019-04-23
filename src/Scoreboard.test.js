@@ -12,3 +12,14 @@ describe("Scoreboard Component", () => {
 		expect(wrapper.find("#scoreAway").text()).toEqual("1");
 	});
 });
+
+describe("Scoreboard Component", () => {
+    it('Should Add 1 run to away team when clicked', () => {
+        const teams = ["Mets", "Phillies"];
+        const wrapper = mount(<Scoreboard teams={teams} />);
+
+        wrapper.find("#buttonHome").simulate('click');
+
+        expect(wrapper.find("#scoreHome").text()).toEqual("1");
+    });
+});
